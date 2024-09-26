@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # PostgreSQL Service
   postgres:
-    image: postgres:latest         # airchie konkretuli versia radgan iyos compatible aplikaciastan ertad, roca daaupgraddeba 'latest' tag-i anu versia, sheildzleba agar wavides shen aplikaciastan eg konkretuli versia
+    image: postgres:16         # airchie konkretuli versia radgan iyos compatible aplikaciastan ertad, roca daaupgraddeba 'latest' tag-i anu versia, sheildzleba agar wavides shen aplikaciastan eg konkretuli versia
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
@@ -35,7 +35,7 @@ services:
 
   # NGINX Service for Proxying
   nginx:
-    image: nginx:latest             # igive akac gasasworebelia
+    image: nginx:1.27.1             # igive akac gasasworebelia
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
