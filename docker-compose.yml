@@ -5,9 +5,9 @@ services:
   postgres:
     image: postgres:16         # airchie konkretuli versia radgan iyos compatible aplikaciastan ertad, roca daaupgraddeba 'latest' tag-i anu versia, sheildzleba agar wavides shen aplikaciastan eg konkretuli versia
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase                       # eseni secure unda iyos ise ro me ver vxedavde.
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}                       # eseni secure unda iyos ise ro me ver vxedavde.
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
@@ -22,9 +22,9 @@ services:
       dockerfile: Dockerfile
     environment:
       DB_HOST: postgres
-      DB_USER: myuser
-      DB_PASSWORD: mypassword
-      DB_NAME: mydatabase
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_NAME: ${POSTGRES_DB}
       DB_PORT: 5432
     expose:
       - "8080"
